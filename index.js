@@ -1,10 +1,10 @@
 
-const plScore = document.querySelector(".your-score");
-const coScore = document.querySelector(".computer-score");
-const presult = document.querySelector(".playerResult");
-const cresult = document.querySelector(".computerResult");
-const div = document.querySelector(".buttons");
-const coSelection = ["Rock", "Paper", "Scissor"];
+const playerScore = document.querySelector(".your-score");
+const computerScore = document.querySelector(".computer-score");
+const playerResult = document.querySelector(".playerResult");
+const computerResult = document.querySelector(".computerResult");
+const buttons = document.querySelector(".buttons");
+const computerSelection = ["Rock", "Paper", "Scissor"];
 let playerCard = 0;
 let computerCard = 0;
 let playerSelection;
@@ -12,36 +12,7 @@ let playerSelection;
 
 
 // Make short and put in one function players selections + result of play + scores update + reset
-const divF = e => {
-    e.target.nodeName === 'BUTTON';
-    let playerSelection = e.target.id;
-    let computerSelection = coSelection[Math.floor(Math.random() * 3)];
-    if (playerSelection === "Rock" && computerSelection === "Rock" ||
-        playerSelection === "Paper" && computerSelection === "Paper" ||
-        playerSelection === "Scissor" && computerSelection === "Scissor") {
-    } else if (playerSelection === "Rock" && computerSelection === "Scissor" ||
-        playerSelection === "scissor" && computerSelection === "Paper" ||
-        playerSelection === "Paper" && computerSelection === "Rock") {
-        playerCard++;
-    } else if (playerSelection === "Rock" && computerSelection === "Paper" ||
-        playerSelection === "Scissor" && computerSelection === "Rock" ||
-        playerSelection === "Paper" && computerSelection === "Scissor") {
-        computerCard++;
-    }
-    if (computerCard == 10) {
-        reset();
-        customAlert();
-    } else if (playerCard == 10) {
-        reset();
-        customAlert()
-    }
 
-    plScore.innerHTML = playerCard;
-    coScore.innerHTML = computerCard;
-    presult.innerHTML = `${playerSelection}`;
-    cresult.innerHTML = `${computerSelection}`;
-}
-div.addEventListener("click", divF);
 
 // Reset scores.
 function reset() {
