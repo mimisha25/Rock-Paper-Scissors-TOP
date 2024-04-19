@@ -4,7 +4,6 @@ const computerScore = document.querySelector(".computer-score");
 const playerResult = document.querySelector(".playerResult");
 const computerResult = document.querySelector(".computerResult");
 const buttons = document.querySelector(".buttons");
-const computerSelection = ["Rock", "Paper", "Scissor"];
 let playerCard = 0;
 let computerCard = 0;
 let playerSelection;
@@ -12,7 +11,16 @@ let playerSelection;
 
 
 // Make short and put in one function players selections + result of play + scores update + reset
-
+buttons.addEventListener("click", function (e){
+    let taget = e.target.id;
+    if(target==="Rock"||
+        target==="Paper"||
+        target==="Scissor"
+    ){
+        playerResult.innerHTML=`<img src="./images/computer-` + computerSelection + `.png">`;
+        computerResult.innerHTML=`<img src="./images/human-` + target + `.png">`;
+    }
+})
 
 // Reset scores.
 function reset() {
