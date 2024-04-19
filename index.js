@@ -8,7 +8,10 @@ let playerCard = 0;
 let computerCard = 0;
 let playerSelection;
 
-
+const computerChoice=()=>{
+    const getComputerAnswer=["Rock", "Paper", "Scissors"];
+    return getComputerAnswer[Math.floor(Math.random()*3)];
+}
 
 // Make short and put in one function players selections + result of play + scores update + reset
 buttons.addEventListener("click", function (e){
@@ -17,7 +20,8 @@ buttons.addEventListener("click", function (e){
         target==="Paper"||
         target==="Scissor"
     ){
-        playerResult.innerHTML=`<img src="./images/computer-` + computerSelection + `.png">`;
+        let computerChoice=computerChoice();
+        playerResult.innerHTML=`<img src="./images/computer-` + computerChoice + `.png">`;
         computerResult.innerHTML=`<img src="./images/human-` + target + `.png">`;
     }
 })
