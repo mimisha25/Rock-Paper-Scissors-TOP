@@ -6,7 +6,7 @@ const computerResult = document.querySelector(".computerResult");
 const buttons = document.querySelector(".buttons");
 let playerCard = 0;
 let computerCard = 0;
-let playerSelection;
+
 
 const computerChoice=()=>{
     const getComputerAnswer=["Rock", "Paper", "Scissors"];
