@@ -15,7 +15,7 @@ const computerChoice=()=>{
 
 // Make short and put in one function players selections + result of play + scores update + reset
 buttons.addEventListener("click", function (e){
-    let taget = e.target.id;
+    let target = e.target.id;
     if(target==="Rock"||
         target==="Paper"||
         target==="Scissor"
