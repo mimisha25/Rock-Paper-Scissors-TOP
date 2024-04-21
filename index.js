@@ -1,10 +1,10 @@
 
-const playerScore = document.querySelector(".your-score");
+const humanScore = document.querySelector(".your-score");
 const computerScore = document.querySelector(".computer-score");
-const playerResult = document.querySelector(".playerResult");
+const humanResult = document.querySelector(".playerResult");
 const computerResult = document.querySelector(".computerResult");
 const buttons = document.querySelector(".buttons");
-let playerCard = 0;
+let humanCard = 0;
 let computerCard = 0;
 
 
@@ -21,14 +21,16 @@ buttons.addEventListener("click", function (e){
         target==="Scissor"
     ){
         let computerChoice=computerChoice();
-        playerResult.innerHTML=`<img src="./images/computer-` + computerChoice + `.png">`;
+        humanResult.innerHTML=`<img src="./images/computer-` + computerChoice + `.png">`;
         computerResult.innerHTML=`<img src="./images/human-` + target + `.png">`;
     }
 })
 
+
+
 // Reset scores.
 function reset() {
-    playerCard = 0;
+   humanCard = 0;
     computerCard = 0;
     plScore.innerHTML = "0";
     coScore.innerHTML = "0";
