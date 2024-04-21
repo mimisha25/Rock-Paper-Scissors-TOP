@@ -21,11 +21,25 @@ buttons.addEventListener("click", function (e){
         target==="Scissor"
     ){
         let computerChoice=computerChoice();
+        playRound(target, computerChoice);
         humanResult.innerHTML=`<img src="./images/computer-` + computerChoice + `.png">`;
         computerResult.innerHTML=`<img src="./images/human-` + target + `.png">`;
     }
 })
 
+function playRound(humanChoice, computerChoice) {
+    if(humanChoice === "rock" && computerChoice === "paper" ||
+       humanChoice === "paper" && computerChoice === "scissors" ||
+       humanChoice === "scissors" && computerChoice === "rock" ){
+        computerCard++;
+        computerScore.innerText=`Computer Score: ` + computerCard;
+    }else if(humanChoice === computerChoice){
+        console.log("It's a Tie!!!");
+    }else{
+        humanCard++;
+        humanScore.innerText=`Human Score: ` + humanCard;
+    }
+  }
 
 
 // Reset scores.
