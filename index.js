@@ -41,6 +41,16 @@ function playRound(humanChoice, computerChoice) {
     }
   }
 
+  function playGame(){
+    if(computerCard === 5 || humanCard === 5){
+        if(computerCard === 5){
+            customAlert();
+        }else if(humanCard === 5){
+            customAlert();
+        }
+    }
+    
+  }
 
 // Reset scores.
 function reset() {
