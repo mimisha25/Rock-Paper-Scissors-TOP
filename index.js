@@ -16,13 +16,14 @@ const computerChoice=()=>{
 // Make short and put in one function players selections + result of play + scores update + reset
 buttons.addEventListener("click", function (e){
     let target = e.target.id;
+    console.log(target);
     if(target==="Rock"||
         target==="Paper"||
         target==="Scissors"
     ){
-        let computerChoice=computerChoice();
-        playRound(target, computerChoice);
-        humanResult.innerHTML=`<img src="./images/computer-` + computerChoice + `.png">`;
+        let computerChoose=computerChoice();
+        playRound(target, computerChoose);
+        humanResult.innerHTML=`<img src="./images/computer-` + computerChoose + `.png">`;
         computerResult.innerHTML=`<img src="./images/human-` + target + `.png">`;
     }
 })
