@@ -18,7 +18,7 @@ buttons.addEventListener("click", function (e){
     let target = e.target.id;
     if(target==="Rock"||
         target==="Paper"||
-        target==="Scissor"
+        target==="Scissors"
     ){
         let computerChoice=computerChoice();
         playRound(target, computerChoice);
