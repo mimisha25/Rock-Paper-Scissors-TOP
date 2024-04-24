@@ -23,8 +23,8 @@ buttons.addEventListener("click", function (e){
     ){
         let computerChoose=computerChoice();
         playRound(target, computerChoose);
-        humanResult.innerHTML=`<img src="./images/computer-` + computerChoose + `.png">`;
-        computerResult.innerHTML=`<img src="./images/human-` + target + `.png">`;
+        computerResult.innerHTML=`<img src="./images/computer-` + computerChoose + `.png">`;
+        humanResult.innerHTML=`<img src="./images/human-` + target + `.png">`;
     }
 })
 
