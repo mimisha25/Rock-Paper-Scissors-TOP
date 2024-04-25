@@ -33,12 +33,12 @@ function playRound(humanChoice, computerChoice) {
        humanChoice === "paper" && computerChoice === "scissors" ||
        humanChoice === "scissors" && computerChoice === "rock" ){
         computerCard++;
-        computerScore.innerText=`Computer Score: ` + computerCard;
+        computerScore.innerText=computerCard;
     }else if(humanChoice === computerChoice){
         console.log("It's a Tie!!!");
     }else{
         humanCard++;
-        humanScore.innerText=`Human Score: ` + humanCard;
+        humanScore.innerText=humanCard;
     }
   }
 
