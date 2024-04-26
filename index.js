@@ -29,9 +29,9 @@ buttons.addEventListener("click", function (e){
 })
 
 function playRound(humanChoice, computerChoice) {
-    if(humanChoice === "rock" && computerChoice === "paper" ||
-       humanChoice === "paper" && computerChoice === "scissors" ||
-       humanChoice === "scissors" && computerChoice === "rock" ){
+    if(humanChoice === "Rock" && computerChoice === "Paper" ||
+       humanChoice === "Paper" && computerChoice === "Scissors" ||
+       humanChoice === "Scissors" && computerChoice === "Rock" ){
         computerCard++;
         computerScore.innerText=computerCard;
     }else if(humanChoice === computerChoice){
