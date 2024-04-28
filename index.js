@@ -63,17 +63,23 @@ function reset() {
 
 
 //Open alert box. Designed and positioned on the page.
-function customAlert() {
-    var winW = window.innerWidth;
-    var winH = window.innerHeight;
-    dialogoverlay.style.display = "block";
-    dialogoverlay.style.height = winH + "px";
-    dialogbox.style.left = (winW / 2) - (550 * .5) + "px";
-    dialogbox.style.top = "100px";
-    dialogbox.style.display = "block";
-    dialogbox.style.left = (winW / 2) - (550 * .5) + "px";
-    document.getElementById('dialogboxfoot').innerHTML = '<button onclick="ok()">Play Again</button>';
+function customAlert(){
+    document.querySelector("dialog").showModal();
+    document.querySelector("#play-again").addEventListener("click", 
+        document.querySelector("dialog").close()
+    )
 }
+// function customAlert() {
+//     var winW = window.innerWidth;
+//     var winH = window.innerHeight;
+//     dialogoverlay.style.display = "block";
+//     dialogoverlay.style.height = winH + "px";
+//     dialogbox.style.left = (winW / 2) - (550 * .5) + "px";
+//     dialogbox.style.top = "100px";
+//     dialogbox.style.display = "block";
+//     dialogbox.style.left = (winW / 2) - (550 * .5) + "px";
+//     document.getElementById('dialogboxfoot').innerHTML = '<button onclick="ok()">Play Again</button>';
+// }
 
 //Ok button in alert box. This button will turn the page to initial version
 function ok() {
