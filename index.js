@@ -21,10 +21,12 @@ buttons.addEventListener("click", function (e){
         target==="Paper"||
         target==="Scissors"
     ){
+        
         let computerChoose=computerChoice();
         playRound(target, computerChoose);
         computerResult.innerHTML=`<img src="./images/computer-` + computerChoose + `.png">`;
         humanResult.innerHTML=`<img src="./images/human-` + target + `.png">`;
+
     }
 })
 
@@ -33,6 +35,7 @@ function playRound(humanChoice, computerChoice) {
        humanChoice === "Paper" && computerChoice === "Scissors" ||
        humanChoice === "Scissors" && computerChoice === "Rock" ){
         computerCard++;
+        
         computerScore.innerText=computerCard;
     }else if(humanChoice === computerChoice){
         console.log("It's a Tie!!!");
@@ -40,15 +43,17 @@ function playRound(humanChoice, computerChoice) {
         humanCard++;
         humanScore.innerText=humanCard;
     }
+    playGame();
   }
 
   function playGame(){
     if(computerCard === 5 || humanCard === 5){
         if(computerCard === 5){
-            customAlert();
+            alert("Computer is winner");
         }else if(humanCard === 5){
-            customAlert();
+            alert("human is winner");
         }
+        reset();
     }
     
   }
@@ -62,13 +67,13 @@ function reset() {
 }
 
 
-//Open alert box. Designed and positioned on the page.
-function customAlert(){
-    document.querySelector("dialog").showModal();
-    document.querySelector("#play-again").addEventListener("click", 
-        document.querySelector("dialog").close()
-    )
-}
+// function customAlert(){
+//     document.querySelector("dialog").showModal();
+//     document.querySelector("#play-again").addEventListener("click", 
+//         document.querySelector("dialog").close()
+//     )
+// }
+
 // function customAlert() {
 //     var winW = window.innerWidth;
 //     var winH = window.innerHeight;
@@ -82,9 +87,9 @@ function customAlert(){
 // }
 
 //Ok button in alert box. This button will turn the page to initial version
-function ok() {
-    document.getElementById('dialogbox').style.display = "none";
-    document.getElementById('dialogoverlay').style.display = "none";
-    presult.innerHTML = "";
-    cresult.innerHTML = ""
-}
+// function ok() {
+//     document.getElementById('dialogbox').style.display = "none";
+//     document.getElementById('dialogoverlay').style.display = "none";
+//     presult.innerHTML = "";
+//     cresult.innerHTML = ""
+// }
