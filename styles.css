@@ -103,42 +103,15 @@ button:active {
 
 
 /* Popup Alert Box */
-#dialogoverlay,
-#dialogbox{
-    display: none;
-    position: fixed;
-    z-index: 10; 
-}
-#dialogoverlay{
-    opacity: .8;
-    top: 0px;
-    left: 0px;
-    background: #FFF;
-    width: 100%;
-}
-#dialogbox {
-    background: #0846ef;
-    border-radius: 7px;
-    width: 550px;
-    height: 300px;
-}
-
-#dialogbox>div {
-    background: #FFF;
-    margin: 0px 50px;
-}
-
-#dialogbox>div>#dialogboxhead,
-#dialogbox>div>#dialogboxfoot{
-    background: #f6f232;
-    color: #274dff;
-    font-family: cursive;
-}
-#dialogbox>div>#dialogboxhead{
-    text-align: center;
-    font-size: 30px;
-}
-#dialogbox>div>#dialogboxfoot {
-    text-align: right;
-    justify-content: center;
+dialog{
+    height:50%;
+    button{
+        width: 140px;
+        height: 70px;
+        font-size: 1.1rem;
+        margin: 0;
+    }
+    h2{
+        padding-top: 30px;
+    }
 }
