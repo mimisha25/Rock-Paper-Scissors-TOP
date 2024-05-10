@@ -8,88 +8,60 @@ let humanCard = 0;
 let computerCard = 0;
 
 
-const computerChoice=()=>{
-    const getComputerAnswer=["Rock", "Paper", "Scissors"];
-    return getComputerAnswer[Math.floor(Math.random()*3)];
+const computerChoice = () => {
+    const getComputerAnswer = ["Rock", "Paper", "Scissors"];
+    return getComputerAnswer[Math.floor(Math.random() * 3)];
 }
 
-// Make short and put in one function players selections + result of play + scores update + reset
-buttons.addEventListener("click", function (e){
+buttons.addEventListener("click", function (e) {
     let target = e.target.id;
     console.log(target);
-    if(target==="Rock"||
-        target==="Paper"||
-        target==="Scissors"
-    ){
-        
-        let computerChoose=computerChoice();
+    if (target === "Rock" ||
+        target === "Paper" ||
+        target === "Scissors"
+    ) {
+
+        let computerChoose = computerChoice();
         playRound(target, computerChoose);
-        computerResult.innerHTML=`<img src="./images/computer-` + computerChoose + `.png">`;
-        humanResult.innerHTML=`<img src="./images/human-` + target + `.png">`;
+        computerResult.innerHTML = `<img src="./images/computer-` + computerChoose + `.png">`;
+        humanResult.innerHTML = `<img src="./images/human-` + target + `.png">`;
 
     }
 })
 
 function playRound(humanChoice, computerChoice) {
-    if(humanChoice === "Rock" && computerChoice === "Paper" ||
-       humanChoice === "Paper" && computerChoice === "Scissors" ||
-       humanChoice === "Scissors" && computerChoice === "Rock" ){
+    if (humanChoice === "Rock" && computerChoice === "Paper" ||
+        humanChoice === "Paper" && computerChoice === "Scissors" ||
+        humanChoice === "Scissors" && computerChoice === "Rock") {
         computerCard++;
-        
-        computerScore.innerText=computerCard;
-    }else if(humanChoice === computerChoice){
+
+        computerScore.innerText = computerCard;
+    } else if (humanChoice === computerChoice) {
         console.log("It's a Tie!!!");
-    }else{
+    } else {
         humanCard++;
-        humanScore.innerText=humanCard;
+        humanScore.innerText = humanCard;
     }
     playGame();
-  }
+}
 
-  function playGame(){
-    if(computerCard === 5 || humanCard === 5){
-        if(computerCard === 5){
+function playGame() {
+    if (computerCard === 5 || humanCard === 5) {
+        if (computerCard === 5) {
             alert("Computer is winner");
-        }else if(humanCard === 5){
+        } else if (humanCard === 5) {
             alert("human is winner");
         }
         reset();
     }
-    
-  }
 
-// Reset scores.
+}
+
+
 function reset() {
-   humanCard = 0;
+    humanCard = 0;
     computerCard = 0;
     plScore.innerHTML = "0";
     coScore.innerHTML = "0";
 }
 
-
-// function customAlert(){
-//     document.querySelector("dialog").showModal();
-//     document.querySelector("#play-again").addEventListener("click", 
-//         document.querySelector("dialog").close()
-//     )
-// }
-
-// function customAlert() {
-//     var winW = window.innerWidth;
-//     var winH = window.innerHeight;
-//     dialogoverlay.style.display = "block";
-//     dialogoverlay.style.height = winH + "px";
-//     dialogbox.style.left = (winW / 2) - (550 * .5) + "px";
-//     dialogbox.style.top = "100px";
-//     dialogbox.style.display = "block";
-//     dialogbox.style.left = (winW / 2) - (550 * .5) + "px";
-//     document.getElementById('dialogboxfoot').innerHTML = '<button onclick="ok()">Play Again</button>';
-// }
-
-//Ok button in alert box. This button will turn the page to initial version
-// function ok() {
-//     document.getElementById('dialogbox').style.display = "none";
-//     document.getElementById('dialogoverlay').style.display = "none";
-//     presult.innerHTML = "";
-//     cresult.innerHTML = ""
-// }
