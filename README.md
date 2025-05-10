@@ -13,6 +13,8 @@ The project is developed fully in Vanilla JS, Advanced HTML and Responsive CSS
 |Styling | CSS    |
 |Front-End | JavaScript    |
 
+P.S. implementing new features
+
 
 ## Features 💡
 - **Web-Development**: Used Advanced HTML and Responsive&Advanced CSS
